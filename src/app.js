@@ -9,6 +9,8 @@ console.log(path.join(__dirname, '../templates'))
 
 var glock = express()
 
+var port = process.env.PORT || 80
+
 var publicDirectory = path.join(__dirname, '../public')
 var viewsPath = path.join(__dirname, '../templates/views')
 var partials = path.join(__dirname, '../templates/partials')
@@ -88,7 +90,7 @@ glock.get('*', (req, res) => {
     })
 })
 
-glock.listen(80, () => {
+glock.listen(port, () => {
     console.log('glock is open on port 80 waiting for connection')
 })
 
